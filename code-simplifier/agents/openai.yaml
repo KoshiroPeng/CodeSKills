@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Simplifier"
+  short_description: "Simplify recently modified code while preserving exact behavior."
+  default_prompt: "Use $code-simplifier to refine the recently modified code for clarity and maintainability without changing functionality."

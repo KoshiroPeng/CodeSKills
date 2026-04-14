@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Slim Refactor"
+  short_description: "Run bounded simplification refactors without weakening current contracts"
+  default_prompt: "Use $code-slim-refactor for an explicit simplification pass in this repo. Preserve the intended current backend contract, never weaken contracts or assertions to satisfy tests, and default to mode=quick unless the refactor must be formally traceable."
