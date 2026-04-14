@@ -1,10 +1,11 @@
 # CodeSKills
 
 CodeSKills is a local skill collection for Codex/Cursor-style coding assistants.
-This repository currently includes three engineering-focused skills:
+This repository currently includes four engineering-focused skills:
 - `code-review`
 - `code-simplifier`
 - `code-slim-refactor`
+- `worklog-skill`
 
 ## Repository Layout
 
@@ -19,12 +20,48 @@ CodeSKills/
 |   |-- SKILL.md
 |   |-- agents/openai.yaml
 |   `-- references/*.md
+|-- worklog-skill/
+|   |-- SKILL.md
+|   `-- agents/openai.yaml
 `-- README.md
 ```
 
 ## Skills Overview
 
-### 1) `code-review`
+### 1) `worklog-skill`
+
+Purpose:
+- Fill work logs and daily reports in internal Zentao and daily-report systems.
+
+Systems:
+- Zentao: `http://172.16.3.197/max` - Task work hours logging
+- Daily Report: `http://172.16.4.152/login` - Daily report confirmation
+
+Workflow:
+1. Open Zentao first, log in and record work hours
+2. Validate the Zentao operation
+3. Only then open daily-report system
+4. Fill the daily report
+
+Quick Commands:
+```powershell
+# Zentao login
+playwright-cli.cmd -s=maxlogin fill e17 "pengkang"
+playwright-cli.cmd -s=maxlogin fill e21 "Netinfo2025"
+playwright-cli.cmd -s=maxlogin click e29
+
+# Daily report login
+playwright-cli.cmd -s=report152 fill e18 "pengkang"
+playwright-cli.cmd -s=report152 fill e25 "888888"
+playwright-cli.cmd -s=report152 click e31
+```
+
+Typical trigger phrases:
+- `填写日报`
+- `填日报`
+- `fill daily report`
+
+### 3) `code-review`
 
 Purpose:
 - Review GitHub pull requests with a structured multi-pass workflow.
@@ -40,7 +77,7 @@ Typical trigger phrases:
 - `PR review`
 - `pull request audit`
 
-### 2) `code-simplifier`
+### 4) `code-simplifier`
 
 Purpose:
 - Simplify existing code for readability and maintainability while preserving exact behavior.
@@ -56,7 +93,7 @@ Typical trigger phrases:
 - `cleanup without changing behavior`
 - `refactor for readability only`
 
-### 3) `code-slim-refactor`
+### 5) `code-slim-refactor`
 
 Purpose:
 - Run convergence-oriented refactors that reduce structural complexity while protecting current contracts.
