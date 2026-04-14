@@ -1,0 +1,7 @@
+interface:
+  display_name: "Worklog Skill"
+  short_description: "Handle Zentao and daily-report workflows in the required order"
+  default_prompt: "Use $worklog-skill to handle internal Zentao and daily-report workflows. When the task is to fill a daily report, always open Zentao first, complete and validate that step, and only then open the daily-report system and finish the report workflow."
+
+policy:
+  allow_implicit_invocation: true
