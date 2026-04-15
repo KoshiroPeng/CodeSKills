@@ -1,10 +1,11 @@
 # CodeSKills
 
 CodeSKills is a local skill collection for Codex/Cursor-style coding assistants.
-This repository currently includes four engineering-focused skills:
+This repository currently includes five engineering-focused skills:
 - `code-review`
 - `code-simplifier`
 - `code-slim-refactor`
+- `iterative-module-refactor-docs`
 - `worklog-skill`
 
 ## Repository Layout
@@ -19,6 +20,11 @@ CodeSKills/
 |-- code-slim-refactor/
 |   |-- SKILL.md
 |   |-- agents/openai.yaml
+|   `-- references/*.md
+|-- iterative-module-refactor-docs/
+|   |-- SKILL.md
+|   |-- agents/openai.yaml
+|   |-- scripts/update_refactor_index.py
 |   `-- references/*.md
 |-- worklog-skill/
 |   |-- SKILL.md
@@ -113,6 +119,26 @@ Typical trigger phrases:
 - `code slim`
 - `slim refactor`
 - `structured simplification pass`
+
+### 6) `iterative-module-refactor-docs`
+
+Purpose:
+- Run multi-round refactors one service boundary at a time with persistent documentation and per-round commits.
+
+Highlights:
+- Uses `docs/refactor/refactor-index.md` as the source of truth for service queue and status.
+- Requires four maintained artifacts:
+- `refactor-index.md`
+- `technical.md`
+- `task-brief.md`
+- `rationale.md`
+- Includes `scripts/update_refactor_index.py` to auto-scan service boundaries and sync index.
+- Enforces one-service-per-round execution and one commit per round.
+
+Typical trigger phrases:
+- `iterative refactor by service`
+- `multi-round refactor with docs`
+- `incremental module refactor`
 
 ## Quick Usage
 

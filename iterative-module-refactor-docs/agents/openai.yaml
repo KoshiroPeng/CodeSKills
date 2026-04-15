@@ -1,0 +1,4 @@
+interface:
+  display_name: "Iterative Service Refactor"
+  short_description: "Refactor one service each round with tracked docs and commits"
+  default_prompt: "Use $iterative-module-refactor-docs to refactor this repository one service per round, update persistent refactor docs, skip completed services, and commit each round in Chinese."
