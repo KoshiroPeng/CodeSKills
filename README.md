@@ -52,13 +52,13 @@ Workflow:
 Quick Commands:
 ```powershell
 # Zentao login
-playwright-cli.cmd -s=maxlogin fill e17 "pengkang"
-playwright-cli.cmd -s=maxlogin fill e21 "Netinfo2025"
+playwright-cli.cmd -s=maxlogin fill e17 "账号"
+playwright-cli.cmd -s=maxlogin fill e21 "密码"
 playwright-cli.cmd -s=maxlogin click e29
 
 # Daily report login
-playwright-cli.cmd -s=report152 fill e18 "pengkang"
-playwright-cli.cmd -s=report152 fill e25 "888888"
+playwright-cli.cmd -s=report152 fill e18 "账号"
+playwright-cli.cmd -s=report152 fill e25 "密码"
 playwright-cli.cmd -s=report152 click e31
 ```
 
