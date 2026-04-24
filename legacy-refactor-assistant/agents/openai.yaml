@@ -1,0 +1,3 @@
+interface:
+  display_name: "Legacy Refactor Assistant"
+  short_description: "Safely understand, wrap, and migrate legacy code with AI."

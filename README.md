@@ -7,6 +7,7 @@ This repository currently includes five engineering-focused skills:
 - `code-slim-refactor`
 - `iterative-module-refactor-docs`
 - `worklog-skill`
+- `legacy-refactor-assistant`
 
 ## Repository Layout
 
@@ -28,6 +29,10 @@ CodeSKills/
 |   `-- references/*.md
 |-- worklog-skill/
 |   |-- SKILL.md
+|   `-- agents/openai.yaml
+|-- legacy-refactor-assistant/
+|   |-- SKILL.md
+|   |-- references/refactor-checklists.md
 |   `-- agents/openai.yaml
 `-- README.md
 ```
@@ -139,6 +144,26 @@ Typical trigger phrases:
 - `iterative refactor by service`
 - `multi-round refactor with docs`
 - `incremental module refactor`
+
+### 7) `legacy-refactor-assistant`
+
+Purpose:
+- Plan and execute safe AI-assisted refactoring for unfamiliar legacy codebases that contain important business logic which must not be deleted.
+
+Highlights:
+- Legacy code inventory and risk mapping.
+- Business logic explanation before changing.
+- Protection net: API regression tests, golden-master tests, characterization tests.
+- Target architecture design with business-domain boundaries.
+- Wrap legacy logic with facade/adapter before migration.
+- Incremental migration with behavior comparison.
+- Before/after review and documentation.
+
+Typical trigger phrases:
+- `refactor legacy code`
+- `understand old source code`
+- `migrate legacy system`
+- `safe refactoring`
 
 ## Quick Usage
 
